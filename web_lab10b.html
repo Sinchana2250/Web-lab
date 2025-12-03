@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,13 +11,14 @@
  </style>
 </head>
 <body>
+    <h2>Sampath Nayak<br>4MW23CS133</br></h2>
  <h1>Sorted Student Records</h1>
  <table>
  <tr><th>ID</th><th>Name</th><th>Grade</th></tr>
  <?php
- $conn = new mysqli("localhost", "root", "", "students124");
+ $conn = new mysqli("localhost", "root", "1239", "students1234");
  $students = $conn->query("SELECT * FROM 
-students124")->fetch_all(MYSQLI_ASSOC);for ($i = 0; $i < count($students) - 1; $i++) {
+students1234")->fetch_all(MYSQLI_ASSOC);for ($i = 0; $i < count($students) - 1; $i++) {
  $min = $i;
  for ($j = $i + 1; $j < count($students); $j++) {
  if ($students[$j]['name'] < $students[$min]['name']) $min = $j;
@@ -37,3 +37,12 @@ students124")->fetch_all(MYSQLI_ASSOC);for ($i = 0; $i < count($students) - 1; $
  </table>
 </body>
 </html>
+http://localhost:8080/Visitor_counter/Lab10b.php
+create database students1234;
+use students1234;
+create table students1234(id int primary key,name varchar(20),grade float);
+insert into students1234 values(99,"Sampath",95);
+insert into students1234 values(103,"Karthik",91);
+insert into students1234 values(100,"Shamili",94);
+insert into students1234 values(102,"Swaroop",92);
+insert into students1234 values(101,"Shreyas",93);
